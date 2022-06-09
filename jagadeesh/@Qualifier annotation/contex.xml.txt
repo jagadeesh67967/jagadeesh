@@ -9,7 +9,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 
 <context:annotation-config></context:annotation-config>
 
-<bean id="employee" class="com.zensar.beans.Employee" autowire="byType">
+<bean id="employee" class="com.zensar.beans.Employee">
   <property name="employeeId" value="1"></property>
   <property name="employeeName" value="vijay"></property>
 
