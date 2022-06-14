@@ -34,8 +34,8 @@ public class CoupenController {
 	}
 
 	@PostMapping(value = "/coupen", consume = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	public void insertCoupen(@RequestBody Coupon coupon) {
-		couponService.insertCoupen(coupon);
+	public void insertCoupen(@RequestBody Coupon coupen) {
+		couponService.insertCoupen(coupen);
 
 	}
 
