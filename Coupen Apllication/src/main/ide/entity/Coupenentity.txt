@@ -4,53 +4,53 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Coupon {
+public class Coupen {
 	@Id
-	private int couponId;
-	private String couponName;
-	private String couponCode;
+	private int coupenId;
+	private String coupenName;
+	private String coupenCode;
 	
 
-	public Coupon() {
+	public Coupen() {
 		super();
 	}
 
-	public Coupon(int couponId, String couponName, String couponCode) {
+	public Coupen(int coupenId, String coupenName, String coupenCode) {
 		super();
-		this.couponId = couponId;
-		this.couponName = couponName;
-		this.couponCode = couponCode;
+		this.coupenId = coupenId;
+		this.coupenName = coupenName;
+		this.coupenCode = coupenCode;
 	}
 
-	public int getCouponId() {
-		return couponId;
+	public int getCoupenId() {
+		return coupenId;
 	}
 
-	public void setCouponId(int couponId) {
-		this.couponId = couponId;
+	public void setCoupenId(int coupenId) {
+		this.coupenId = coupenId;
 	}
 
-	public String getCouponName() {
-		return couponName;
+	public String getCoupenName() {
+		return coupenName;
 	}
 
-	public void setCouponName(String couponName) {
-		this.couponName = couponName;
+	public void setCoupenName(String coupenName) {
+		this.coupenName = coupenName;
 	}
 
-	public int getCouponCode() {
-		return couponCode;
+	public int getCoupenCode() {
+		return coupenCode;
 	}
 
-	public void setCouponPrice(String couponCode) {
-		this.couponCode = couponCode;
+	public void setCoupenPrice(String coupenCode) {
+		this.coupenCode = coupenCode;
 	}
 
 	
 
 	@Override
 	public String toString() {
-		return "Coupon [couponId=" + couponId + ", couponName=" + couponName + ", couponCode=" + couponCode
+		return "Coupen [coupenId=" + coupenId + ", coupenName=" + coupenName + ", coupenCode=" + coupenCode
 				+ "]";
 	}
 
