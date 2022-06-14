@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootCouponServiceApplication {
+public class SpringBootCoupenServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootCouponServiceApplication.class, args);
+		SpringApplication.run(SpringBootCoupenServiceApplication.class, args);
 	}
 
 }
