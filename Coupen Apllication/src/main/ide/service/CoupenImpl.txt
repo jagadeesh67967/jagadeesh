@@ -5,42 +5,42 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.zensar.ide.entity.Coupon;
-import com.zensar.ide.repository.CouponRepository;
+import com.zensar.ide.entity.Coupen;
+import com.zensar.ide.repository.CoupenRepository;
 
 @Service
-public class CouponServiceImpl implements CouponService {
+public class CoupenServiceImpl implements CoupenService {
 	@Autowired
-	private CouponRepository couponRepository;
+	private CoupenRepository coupenRepository;
 
-	public CouponServiceImpl() {
+	public CoupenServiceImpl() {
 	}
 
 	@Override
-	public Coupon getCoupon(int couponId) {
-		return couponRepository.findById(couponId).get();
+	public Coupen getCoupen(int coupenId) {
+		return coupenRepository.findById(coupenId).get();
 	}
 
 	@Override
-	public List<Coupon> getCoupons() {
-		return couponRepository.findAll();
+	public List<Coupen> getCoupens() {
+		return coupenRepository.findAll();
 	}
 
 	@Override
-	public void insertCoupon(Coupon coupon) {
-		couponRepository.save(coupon);
-
-	}
-
-	@Override
-	public void updateCoupon(int couponId, Coupon coupon) {
-		couponRepository.save(coupon);
+	public void insertCoupen(Coupen coupen) {
+		coupenRepository.save(coupen);
 
 	}
 
 	@Override
-	public void deleteCoupon(int couponId) {
-		couponRepository.deleteById(couponId);
+	public void updateCoupen(int coupenId, Coupen coupen) {
+		coupenRepository.save(coupen);
+
+	}
+
+	@Override
+	public void deleteCoupen(int coupenId) {
+		coupenRepository.deleteById(coupenId);
 
 	}
 
