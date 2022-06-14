@@ -2,16 +2,16 @@ package com.zensar.ide.Service;
 
 import java.util.List;
 
-import com.zensar.ide.entity.Coupon;
+import com.zensar.ide.entity.Coupen;
 
-public interface CouponService {
-	public Coupon getCoupon(int CouponId);
+public interface CoupenService {
+	public Coupen getCoupen(int CoupenId);
 
-	public List<Coupon> getCoupons();
+	public List<Coupen> getCoupens();
 
-	public void insertCoupon(Coupon coupon);
+	public void insertCoupen(Coupen coupen);
 
-	public void updateCoupon(int CouponId, Coupon coupon);
+	public void updateCoupen(int CoupenId, Coupen coupen);
 
-	public void deleteCoupon(int CouponId);
+	public void deleteCoupen(int CoupenId);
 }
