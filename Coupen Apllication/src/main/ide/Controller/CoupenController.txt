@@ -23,7 +23,7 @@ public class CoupenController {
 	private CoupenService coupenService;
 	
 	@GetMapping(value = "/coupen", produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	public List<Coupen> getCoupen() {
+	public List<Coupen> getCoupens() {
 		return coupenService.getCoupen();
 	}
 
