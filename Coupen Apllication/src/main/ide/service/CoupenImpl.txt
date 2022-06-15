@@ -1,10 +1,13 @@
 package com.zensar.ide.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.modelmapper.ModelMapper
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.zensar.ide.dto.CoupenDto;
 import com.zensar.ide.entity.Coupen;
 import com.zensar.ide.repository.CoupenRepository;
 
@@ -12,26 +15,51 @@ import com.zensar.ide.repository.CoupenRepository;
 public class CoupenServiceImpl implements CoupenService {
 	@Autowired
 	private CoupenRepository coupenRepository;
+	
+	@Autowired
+	private ModelMapper modelMapper;
 
 	public CoupenServiceImpl() {
 	}
 	
 	
 	@Override
-	public List<Coupen> getCoupens() {
-		return coupenRepository.findAll();
+	public List<CoupenDto> getCoupens() {
+		List<Coupen> listOfCoupens = coupenRepository.findAll();
+		List<CoupenDto> listOfCoupenDto = new ArrayList<CoupenDto>();
+		for (Coupen coupen : listOfCoupens) {
+			//listOfCoupenDto.add(mapToDto(coupen));
+			listOfCoupenDto.add(modelMapper.map(coupen,CoupenDto.class));
+		}
+		return listOfCoupenDto;
 	}
 	
 	@Override
-	public void insertCoupen(Coupen coupen) {
-		coupenRepository.save(coupen);
-
-        }
-
+	public CoupenDto getCoupen(int coupenId) {
+		Coupen getCoupen = coupenRepository.findById(coupenId).get();
+		return modelMapper.map(getCoupen,CoupenDto.class);
+		// return mapToDto(getCoupen);
+	
+	
+	
 	@Override
-	public Coupen getCoupen(int coupenId) {
-		return coupenRepository.findById(coupenId).get();
+	public CoupenDto insertCoupen(CoupenDto coupenDto) {
+		/*
+		 * Coupen coupen = new Coupen(); coupen.setCoupenId(coupenDto.getCoupenId());
+		 * coupen.setCoupenName(coupenDto.getCoupenName());
+		 * coupen.setExpDate(coupenDto.getExpDate());
+		 * coupen.setCoupenCode(coupenDto.getCoupenCode());
+		 */
+		//Coupen coupen = mapToEntity(coupenDto);
+		Coupen coupen = modelMapper.map(coupenDto,Coupen.class);
+		Coupen insertedCoupen = coupenRepository.save(coupen);
+		//return mapToDto(insertedCoupen);
+		return modelMapper.map(insertedCoupen,CoupenDto.class);
+
 	}
+
+
+	
 	
 	@Override
 	public void deleteCoupen(int coupenId) {
@@ -40,9 +68,32 @@ public class CoupenServiceImpl implements CoupenService {
 	}	
 
 	@Override
-	public void updateCoupen(int coupenId, Coupen coupen) {
+	public void updateCoupen(int coupenId, CoupenDto coupenDto) {
+		/*
+		 * Coupen coupen = new Coupen();coupen.setCoupenId(coupenDto.getCoupenId());
+		 * coupen.setCoupenName(coupenDto.getCoupenName());
+		 * coupen.setExpDate(coupenDto.getExpDate());
+		 * coupen.setCoupenCode(coupenDto.getCoupenCode());
+		 */
+		//Coupen coupen = mapToEntity(coupenDto);
+		Coupen coupen = modelMapper.map(coupenDto,Coupen.class);
 		coupenRepository.save(coupen);
-	
+
 	}
+	
+	/*
+	 * public Coupen mapToEntity(CoupenDto coupenDto) { Coupen coupen = new
+	 * Coupen(); coupen.setCoupenId(coupenDto.getCoupenId());
+	 * coupen.setCoupenName(coupenDto.getCoupenName());
+	 * coupen.setExpDate(coupenDto.getExpDate());
+	 * coupen.setCoupenCode(coupenDto.getCoupenCode());return coupon; 
+	 */
+	/*
+	 * public CoupenDto mapToDto(Coupen coupen) { CoupenDto coupenDto = new
+	 * CoupenDto(); coupenDto.setCoupenId(coupen.getCoupenId());
+	 * coupenDto.setCoupenName(coupen.getCoupenName());
+	 * coupenDto.setExpDate(coupen.getExpDate());
+	 * coupenDto.setCoupenCode(coupen.getCoupenCode()); return coupon; }
+	 */
 
 }
