@@ -15,21 +15,22 @@ public class CoupenServiceImpl implements CoupenService {
 
 	public CoupenServiceImpl() {
 	}
-
-	@Override
-	public Coupen getCoupen(int coupenId) {
-		return coupenRepository.findById(coupenId).get();
-	}
-
+	
+	
 	@Override
 	public List<Coupen> getCoupens() {
 		return coupenRepository.findAll();
 	}
-
+	
 	@Override
 	public void insertCoupen(Coupen coupen) {
 		coupenRepository.save(coupen);
 
+
+
+	@Override
+	public Coupen getCoupen(int coupenId) {
+		return coupenRepository.findById(coupenId).get();
 	}
 
 	@Override
