@@ -32,10 +32,9 @@ public class CoupenController {
 		return coupenService.getCoupen(CoupenId);
 	}
 	
-	@PutMapping(value = "coupen/{coupenId}", consume = { MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE })
-	public void updateCoupen(@PathVariable("coupenId") int CoupenId, @RequestBody Coupen coupen) {
-		coupenService.updateCoupen(CoupenId, coupen);
-
+	@DeleteMapping("coupen/{coupenId}")
+	public void deleteCoupen(@PathVariable("coupenId") int CoupenId) {
+		coupenService.deleteCoupen(CoupenId);
 	}
 
 	@PostMapping(value = "/coupen", consume = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
@@ -43,9 +42,10 @@ public class CoupenController {
 		coupenService.insertCoupen(coupen);
 
 	}
+	
+	@PutMapping(value = "coupen/{coupenId}", consume = { MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE })
+	public void updateCoupen(@PathVariable("coupenId") int CoupenId, @RequestBody Coupen coupen) {
+		coupenService.updateCoupen(CoupenId, coupen);
 
-	@DeleteMapping("coupen/{coupenId}")
-	public void deleteCoupen(@PathVariable("coupenId") int CoupenId) {
-		coupenService.deleteCoupen(CoupenId);
 	}
 }
