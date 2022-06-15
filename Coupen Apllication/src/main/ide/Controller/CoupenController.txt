@@ -22,12 +22,12 @@ public class CoupenController {
 	@Autowired
 	private CoupenService coupenService;
 	
-	@GetMapping(value = "/coupen", produce = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
+	@GetMapping(value = "/coupen", produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	public List<Coupen> getCoupen() {
 		return coupenService.getCoupen();
 	}
 
-	@GetMapping(value = "/coupen/{coupenId}", produce = { MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE })
+	@GetMapping(value = "/coupen/{coupenId}", produces = { MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE })
 	public Coupon getCoupen(@PathVariable("coupen") int CoupenId) {
 		return coupenService.getCoupen(CoupenId);
 	}
@@ -37,13 +37,13 @@ public class CoupenController {
 		coupenService.deleteCoupen(CoupenId);
 	}
 
-	@PostMapping(value = "/coupen", consume = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
+	@PostMapping(value = "/coupen", consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	public void insertCoupen(@RequestBody Coupen coupen) {
 		coupenService.insertCoupen(coupen);
 
 	}
 	
-	@PutMapping(value = "coupen/{coupenId}", consume = { MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE })
+	@PutMapping(value = "coupen/{coupenId}", consumes = { MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE })
 	public void updateCoupen(@PathVariable("coupenId") int CoupenId, @RequestBody Coupen coupen) {
 		coupenService.updateCoupen(CoupenId, coupen);
 
