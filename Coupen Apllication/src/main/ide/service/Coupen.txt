@@ -2,17 +2,18 @@ package com.zensar.ide.Service;
 
 import java.util.List;
 
+import com.zensar.ide.dto.CoupenDto;
 import com.zensar.ide.entity.Coupen;
 
 public interface CoupenService {
-	public Coupen getCoupen(int CoupenId);
+	public CoupenDto getCoupen(int CoupenId);
 
-	public List<Coupen> getCoupens();
-
-	public void insertCoupen(Coupen coupen);
+	public List<CoupenDto> getCoupens();
 	
 	public void deleteCoupen(int CoupenId);
 
-	public void updateCoupen(int CoupenId, Coupen coupen);
+	public void updateCoupen(int CoupenId, CoupenDto coupenDto);
+	
+	public CoupenDto insertCoupen(CoupenDto coupenDto);
 	
 }
