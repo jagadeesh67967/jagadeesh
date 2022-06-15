@@ -1,33 +1,32 @@
 package com.zensar.ide.dto;
 
-public class CouponDto {
-	private int couponId;
-	private String couponCode;
-	private String expDate;
-	private int couponPrice;
-	private String couponDesc;
-	public CouponDto() {
+public class CoupenDto {
+	private int coupenId;
+	private String coupenName;
+	private int expDate;
+	private String coupenCode;
+	
+	public CoupenDto() {
 		super();
 	}
-	public CouponDto(int couponId, String couponCode, String expDate, int couponPrice, String couponDesc) {
+	public CoupenDto(int coupenId, String coupenName, int expDate, string coupenCode) {
 		super();
-		this.couponId = couponId;
-		this.couponCode = couponCode;
+		this.coupenId = coupenId;
+		this.coupenName = coupenName;
 		this.expDate = expDate;
-		this.couponPrice = couponPrice;
-		this.couponDesc = couponDesc;
+		this.coupenCode = coupenCode;
 	}
-	public int getCouponId() {
-		return couponId;
+	public int getCoupenId() {
+		return coupenId;
 	}
-	public void setCouponId(int couponId) {
-		this.couponId = couponId;
+	public void setCoupenId(int coupenId) {
+		this.coupenId = coupenId;
 	}
-	public String getCouponCode() {
-		return couponCode;
+	public String getCoupenName() {
+		return coupenName;
 	}
-	public void setCouponCode(String couponCode) {
-		this.couponCode = couponCode;
+	public void setCoupenName(String coupenName) {
+		this.coupenName = coupenName;
 	}
 	public String getExpDate() {
 		return expDate;
@@ -35,22 +34,17 @@ public class CouponDto {
 	public void setExpDate(String expDate) {
 		this.expDate = expDate;
 	}
-	public int getCouponPrice() {
-		return couponPrice;
+	public String getCoupenCode() {
+		return coupenCode;
 	}
-	public void setCouponPrice(int couponPrice) {
-		this.couponPrice = couponPrice;
+	public void setCoupenCode(String coupenCode) {
+		this.coupenCode = coupenCode;
 	}
-	public String getCouponDesc() {
-		return couponDesc;
-	}
-	public void setCouponDesc(String couponDesc) {
-		this.couponDesc = couponDesc;
-	}
+
 	@Override
 	public String toString() {
-		return "CouponDto [couponId=" + couponId + ", couponCode=" + couponCode + ", expDate=" + expDate
-				+ ", couponPrice=" + couponPrice + ", couponDesc=" + couponDesc + "]";
+		return "CoupenDto [coupenId=" + coupenId + ", coupenName=" + coupenName + ", expDate=" + expDate
+				+ ", coupenCode=" + coupenCode + "]";
 	}
 	
 }
