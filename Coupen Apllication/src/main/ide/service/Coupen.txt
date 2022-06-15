@@ -10,8 +10,9 @@ public interface CoupenService {
 	public List<Coupen> getCoupens();
 
 	public void insertCoupen(Coupen coupen);
+	
+	public void deleteCoupen(int CoupenId);
 
 	public void updateCoupen(int CoupenId, Coupen coupen);
-
-	public void deleteCoupen(int CoupenId);
+	
 }
