@@ -21,28 +21,26 @@ import com.zensar.ide.entity.Coupen;
 public class CoupenController {
 	@Autowired
 	private CoupenService coupenService;
-
-	@GetMapping(value = "/coupen/{coupenId}", produce = { MediaType.APPLICATION_JSON_VALUE,
-			MediaType.APPLICATION_XML_VALUE })
-	public Coupon getCoupen(@PathVariable("coupen") int CoupenId) {
-		return coupenService.getCoupen(CoupenId);
-	}
-
+	
 	@GetMapping(value = "/coupen", produce = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	public List<Coupen> getCoupen() {
 		return coupenService.getCoupen();
 	}
 
-	@PostMapping(value = "/coupen", consume = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	public void insertCoupen(@RequestBody Coupon coupen) {
-		couponService.insertCoupen(coupen);
+	@GetMapping(value = "/coupen/{coupenId}", produce = { MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE })
+	public Coupon getCoupen(@PathVariable("coupen") int CoupenId) {
+		return coupenService.getCoupen(CoupenId);
+	}
+	
+	@PutMapping(value = "coupen/{coupenId}", consume = { MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE })
+	public void updateCoupen(@PathVariable("coupenId") int CoupenId, @RequestBody Coupen coupen) {
+		coupenService.updateCoupen(CoupenId, coupen);
 
 	}
 
-	@PutMapping(value = "coupen/{coupenId}", consume = { MediaType.APPLICATION_JSON_VALUE,
-			MediaType.APPLICATION_XML_VALUE })
-	public void updateCoupen(@PathVariable("coupenId") int CoupenId, @RequestBody Coupen coupen) {
-		coupenService.updateCoupen(CoupenId, coupen);
+	@PostMapping(value = "/coupen", consume = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
+	public void insertCoupen(@RequestBody Coupen coupen) {
+		coupenService.insertCoupen(coupen);
 
 	}
 
