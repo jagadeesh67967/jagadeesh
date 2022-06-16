@@ -8,7 +8,7 @@ public class Coupen {
 	@Id
 	private int coupenId;
 	private String coupenName;
-	private int ExpiryDate;
+	private String ExpiryDate;
 	private String coupenCode;
 	
 
@@ -16,7 +16,7 @@ public class Coupen {
 		super();
 	}
 
-	public Coupen(int coupenId,String coupenName, int coupenExpiryDate, String coupenCode) {
+	public Coupen(int coupenId,String coupenName, String coupenExpiryDate, String coupenCode) {
 		super();
 		this.coupenId = coupenId;
 		this.coupenName = coupenName;
@@ -44,7 +44,7 @@ public class Coupen {
 		return ExpiryDate;
 	}
 
-	public void setExpiryDate(int ExpiryDate) {
+	public void setExpiryDate(String ExpiryDate) {
 		this.ExpiryDate = coupenExpiryDate;
 	}
 
