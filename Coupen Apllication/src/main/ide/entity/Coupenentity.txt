@@ -7,7 +7,6 @@ import javax.persistence.Id;
 public class Coupen {
 	@Id
 	private int coupenId;
-	private String coupenName;
 	private String ExpiryDate;
 	private String coupenCode;
 	
@@ -19,7 +18,6 @@ public class Coupen {
 	public Coupen(int coupenId,String coupenName, String coupenExpiryDate, String coupenCode) {
 		super();
 		this.coupenId = coupenId;
-		this.coupenName = coupenName;
 		this.ExpiryDate = ExpiryDate;
 		this.coupenCode = coupenCode;
 	}
@@ -30,14 +28,6 @@ public class Coupen {
 
 	public void setCoupenId(int coupenId) {
 		this.coupenId = coupenId;
-	}
-	
-	public int getCoupenName() {
-		return coupenName;
-	}
-
-	public void setCoupenName(int coupenName) {
-		this.coupenName = coupenName;
 	}
 
 	public String getExpiryDate() {
@@ -60,8 +50,7 @@ public class Coupen {
 
 	@Override
 	public String toString() {
-		return "Coupen [coupenId=" + coupenId + ",coupenName=" + coupenName + ", ExpiryDate=" + ExpiryDate + ", coupenCode=" + coupenCode
-				+ "]";
+		return "Coupen [coupenId=" + coupenId + ", ExpiryDate=" + ExpiryDate + ", coupenCode=" + coupenCode + "]";
 	}
 
 }
