@@ -8,7 +8,7 @@ public class Coupen {
 	@Id
 	private int coupenId;
 	private String coupenName;
-	private int coupenExpiryDate;
+	private int ExpiryDate;
 	private String coupenCode;
 	
 
@@ -20,7 +20,7 @@ public class Coupen {
 		super();
 		this.coupenId = coupenId;
 		this.coupenName = coupenName;
-		this.coupenExpiryDate = coupenExpiryDate;
+		this.ExpiryDate = ExpiryDate;
 		this.coupenCode = coupenCode;
 	}
 
@@ -40,12 +40,12 @@ public class Coupen {
 		this.coupenName = coupenName;
 	}
 
-	public String getcoupenExpiryDate() {
-		return coupenExpiryDate;
+	public String getExpiryDate() {
+		return ExpiryDate;
 	}
 
-	public void setcoupenExpiryDate(int coupenExpiryDate) {
-		this.coupenExpiryDate = coupenExpiryDate;
+	public void setExpiryDate(int ExpiryDate) {
+		this.ExpiryDate = coupenExpiryDate;
 	}
 
 	public int getCoupenCode() {
@@ -60,7 +60,7 @@ public class Coupen {
 
 	@Override
 	public String toString() {
-		return "Coupen [coupenId=" + coupenId + ",coupenName=" + coupenName + ", coupenExpiryDate=" + coupenExpiryDate + ", coupenCode=" + coupenCode
+		return "Coupen [coupenId=" + coupenId + ",coupenName=" + coupenName + ", ExpiryDate=" + ExpiryDate + ", coupenCode=" + coupenCode
 				+ "]";
 	}
 
