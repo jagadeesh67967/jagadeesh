@@ -3,13 +3,13 @@ package com.zensar.ide.dto;
 public class CoupenDto {
 	private int coupenId;
 	private String coupenName;
-	private int expDate;
+	private String expDate;
 	private String coupenCode;
 	
 	public CoupenDto() {
 		super();
 	}
-	public CoupenDto(int coupenId, String coupenName, int expDate, string coupenCode) {
+	public CoupenDto(int coupenId, String coupenName, String expDate, string coupenCode) {
 		super();
 		this.coupenId = coupenId;
 		this.coupenName = coupenName;
