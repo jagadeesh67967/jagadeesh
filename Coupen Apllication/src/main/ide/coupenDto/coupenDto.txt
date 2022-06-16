@@ -2,17 +2,15 @@ package com.zensar.ide.dto;
 
 public class CoupenDto {
 	private int coupenId;
-	private String coupenName;
 	private String expDate;
 	private String coupenCode;
 	
 	public CoupenDto() {
 		super();
 	}
-	public CoupenDto(int coupenId, String coupenName, String expDate, string coupenCode) {
+	public CoupenDto(int coupenId, String expDate, string coupenCode) {
 		super();
 		this.coupenId = coupenId;
-		this.coupenName = coupenName;
 		this.expDate = expDate;
 		this.coupenCode = coupenCode;
 	}
@@ -22,12 +20,7 @@ public class CoupenDto {
 	public void setCoupenId(int coupenId) {
 		this.coupenId = coupenId;
 	}
-	public String getCoupenName() {
-		return coupenName;
-	}
-	public void setCoupenName(String coupenName) {
-		this.coupenName = coupenName;
-	}
+
 	public String getExpDate() {
 		return expDate;
 	}
@@ -43,8 +36,7 @@ public class CoupenDto {
 
 	@Override
 	public String toString() {
-		return "CoupenDto [coupenId=" + coupenId + ", coupenName=" + coupenName + ", expDate=" + expDate
-				+ ", coupenCode=" + coupenCode + "]";
+		return "CoupenDto [coupenId=" + coupenId + ",  expDate=" + expDate + ", coupenCode=" + coupenCode + "]";
 	}
 	
 }
