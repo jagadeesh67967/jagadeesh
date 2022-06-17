@@ -8,12 +8,21 @@ import com.zensar.ide.entity.Coupen;
 public interface CoupenService {
 	public CoupenDto getCoupen(int CoupenId);
 
-	public List<CoupenDto> getCoupens();
+	//public List<CoupenDto> getCoupens();
+	public List<CoupenDto> getCoupens(int pageNumber,int pageSize);
 	
 	public void deleteCoupen(int CoupenId);
 
 	public void updateCoupen(int CoupenId, CoupenDto coupenDto);
 	
 	public CoupenDto insertCoupen(CoupenDto coupenDto);
+	
+	public List<CoupenDto> getByCoupenCode(String coupenCode);
+
+	public List<CoupenDto> getByCoupenCodeOrderByCoupenPrice(String coupenCode);
+	
+	public List<CoupenDto> getByCoupenCodeOrCoupenPrice(String coupenCode, int price);
+	
+	public List<CoupenDto> getByCoupenCodeAndExpDate(String coupenCode, String expDate);
 	
 }
